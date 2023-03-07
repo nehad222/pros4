@@ -1,0 +1,764 @@
+<html>
+<head>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+<style>
+    body{z-index: 0;
+        background-color:hsl(227.734, 48%, 19%) ;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+    div{
+        width:40%;
+        height: 22%;
+        position: absolute;
+        border:solid 2px hsl(217, 16%, 45%);
+        border-radius: 16px;
+        top:5%;
+        left:28%;
+        
+        
+    }    
+    #logo{
+        position: absolute;
+        margin-left: 3%;
+        margin-top: 3%;
+        
+    }
+    points{
+        position: absolute;
+        width:25%;
+        height: 75%;
+        margin-right:3%;
+        background-color: white;
+        border:solid 1px white;
+        border-radius: 4%;
+        left:72%;
+        margin-top: 3%;
+        
+        margin-bottom: 2%;
+    }
+    #score{
+        position: absolute;
+        font-size: 100%;
+        top:15%;
+        
+        font-family: 'Barlow Semi Condensed', sans-serif;
+         color:hsl(229, 64%, 46%);
+        left:26%;
+        
+    }
+    #yourpoints{
+        position: absolute;
+        font-size:300%;
+        top: 35%;
+        left: 40%;
+        color: hsl(229, 25%, 31%);
+                font-family: 'Barlow Semi Condensed', sans-serif;
+
+    }
+    #k{z-index: 2;
+        width:10%;
+        height:20%;
+        border:solid 1px hsl(230, 89%, 62%);
+        border-radius:80px 80px 80px 80px;
+        position: absolute;
+        top:40%;
+        left:33%;
+        background-color: white;
+        
+    }
+    o{z-index: 1;
+       width:12%;
+        height:24%;
+        border:solid 1px hsl(230, 89%, 62%);
+        border-radius:100px 100px 100px 100px;
+        position: absolute;
+        top:38%;
+        left:32%;
+        background-color: hsl(230, 89%, 62%);
+           
+    }
+    #m{
+      z-index: 2;
+        width:10%;
+        height:20%;
+        border:solid 1px hsl(40, 84%, 53%);
+        border-radius:80px 80px 80px 80px;
+        position: absolute;
+        top:40%;
+        left:50%;
+        background-color: white;  
+    }
+    mm{
+        z-index: 1;
+       width:12%;
+        height:24%;
+        border:solid 1px hsl(40, 84%, 53%);
+        border-radius:100px 100px 100px 100px;
+        position: absolute;
+        top:38%;
+        left:49%;
+        background-color:hsl(40, 84%, 53%);
+    }
+    #y{
+             z-index: 2;
+        width:10%;
+        height:20%;
+        border:solid 1px hsl(349, 70%, 56%);
+        border-radius:80px 80px 80px 80px;
+        position: absolute;
+        top:70%;
+        left:41%;
+        background-color: white; 
+    }
+    yy{
+         z-index: 1;
+       width:12%;
+        height:24%;
+        border:solid 1px hsl(349, 70%, 56%);
+        border-radius:100px 100px 100px 100px;
+        position: absolute;
+        top:68%;
+        left:40%;
+        background-color:hsl(349, 71%, 52%);
+    }
+    #paper{
+        position: absolute;
+        top:26%;
+        left:30%;
+        
+    }
+    #sci{
+        position: absolute;
+        top:26%;
+        left:30%;
+    }
+    #rock{
+        position: absolute;
+        top:26%;
+        left:30%;
+    }
+    #photo{
+        position: absolute;
+        top:48%;
+        left:35%;
+        
+    }
+    #rules{
+        z-index: 4;
+        position:absolute;
+        width:9%;
+        height: 5%;
+        left:87%;
+        top:90%;
+        border:solid 1px white;
+        border-radius: 9px;
+        background-color:  hsl(227.734, 48%, 19%);
+
+        
+        
+    }
+    #rules2{
+        position: absolute;
+        font-size: 110%;
+       top:20%;
+        left:30%;
+        
+        color:white;
+        font-family:  sans-serif;
+
+    }
+    #bk{z-index:8;
+        position: absolute;
+        top:35%;
+        left:33%;
+        border-radius: 5%;
+        border:none;
+        width:27%;
+        height: 55%;
+        background-color: white;
+        border: solid 1px white;
+        visibility: hidden;
+    }
+    #oo{
+        position: absolute;
+        top:13%;
+        left:6%;
+        
+    }
+    #ss{
+        position: absolute;
+   
+        top:3%;
+        left: 92%;
+        z-index: -2;
+
+        visibility: hidden;
+    }
+    
+    as{position: absolute;
+        z-index: 12;
+       width: 60%;
+        height: 60%;
+        border: solid 1px hsl(227.734, 48%, 19%);
+        background-color:hsl(227.734, 48%, 19%) ;
+        top: 35%;
+        left: 25%;
+        visibility: hidden;
+        
+    }    
+   
+    ww{
+        left:9%;
+        visibility: hidden;
+        position: absolute;
+            z-index: 1;
+       width:25%;
+        height:55%;
+        border:solid 1px hsl(349, 71%, 52%) ;
+        border-radius:400px 400px 400px 400px;
+        top:27%;
+        background-color:hsl(349, 71%, 52%) ;
+    }
+    wa{visibility: hidden;
+            z-index: 2;
+        width:20%;
+        height:47%;
+        border:solid 1px hsl(349, 71%, 52%) ;
+        border-radius:400px 400px 400px 400px;
+        position: absolute;
+        top:31%;
+        left:11.5%;
+        background-color: white; 
+    }
+    #rocks{ visibility: hidden;
+        position: absolute;
+        top:30%;
+        left:30%;
+        width: 40%;
+        height: 40%;
+    }
+    aa{
+         
+            z-index: 2;
+        width:20%;
+        height:47%;
+        border:solid 1px hsl(237, 49%, 15%);
+        border-radius:400px 400px 400px 400px;
+        position: absolute;
+          top:31%;
+        left:44.5%;
+        background-color:hsl(237, 49%, 15%); 
+    
+    }
+    
+       oa{left: 9%;
+           visibility: hidden;
+        position: absolute;
+            z-index: 1;
+       width:25%;
+        height:55%;
+        border:solid 1px hsl(230, 89%, 62%);
+        border-radius:400px 400px 400px 400px;
+        top:27%;
+        
+        background-color:hsl(230, 89%, 62%);
+    }
+    ob{      
+      
+           visibility: hidden;
+            z-index: 2;
+        width:20%;
+        height:47%;
+        border:solid 1px hsl(230, 89%, 62%);
+        border-radius:300px 300px 300px 300px;
+        position: absolute;
+        top:31%;
+        left:11.5%;
+        background-color: white; 
+    }
+    #opaper{
+            visibility: hidden;
+
+        position: absolute;
+       top:30%;
+        left:30%;
+        width: 40%;
+        height: 40%;
+    }
+       ua{        visibility: hidden;
+
+        position: absolute;
+            z-index: 1;
+       width:25%;
+        height:55%;
+        border:solid 1px hsl(40, 84%, 53%);
+        border-radius:400px 400px 400px 400px;
+        top:27%;
+        left:9%;
+        background-color:hsl(40, 84%, 53%);
+    }
+    ub{        visibility: hidden;
+
+            z-index: 2;
+        width:20%;
+        height:47%;
+        border:solid 1px hsl(40, 84%, 53%);
+        border-radius:300px 300px 300px 300px;
+        position: absolute;
+        top:31%;
+        left:11.5%;
+        background-color: white; 
+    }
+    #usci{
+                visibility: hidden;
+
+        position: absolute;
+        top:30%;
+        left:30%;
+        width: 40%;
+        height: 40%;
+    }
+    
+    
+    
+    
+    #ros2{
+      width:25%;
+        height:55%;   
+     visibility: hidden;
+        z-index: 40;
+        top:27% ;
+        left:42%;
+    }
+    #rock3{  width:20%;
+        height:47%;
+        visibility: hidden;
+        z-index: 50;
+        top:31%;
+        left:44.5%;
+     
+    }
+    #de{width: 40%;
+        height: 40%;
+        
+        position: absolute;
+        visibility: hidden;
+        z-index: 60;
+      top:30%;
+        left:30%;
+    }
+    
+    
+    
+    
+    #papero{
+        width:25%;
+        height:55%;   
+     visibility: hidden;
+        z-index: 40;
+        top:27% ;
+        left:42%;
+    }
+    #paperw{
+         width:20%;
+        height:47%;
+        visibility: hidden;
+        z-index: 50;
+        top:31%;
+        left:44.5%;
+     
+    }
+    #paperq{position: absolute;
+        visibility: hidden;
+        z-index: 60;
+      top:30%;
+        left:30%;
+          width: 40%;
+        height: 40%;
+    }
+    
+    
+    
+    #scia{
+          width:25%;
+        height:55%; 
+     visibility: hidden;
+        z-index: 40;
+        top:27% ;
+        left:42%;
+    }
+    #scio{
+         width:20%;
+        height:47%;
+        visibility: hidden;
+        z-index: 50;
+        top:31%;
+        left:44.5%;
+     
+    }
+    #sciq{position: absolute;
+        visibility: hidden;
+        z-index: 60;
+      top:30%;
+        left:30%;
+          width: 40%;
+        height: 40%;
+    }
+    go{
+        position: absolute;
+        top:3%;
+        left:12%;
+        font-size: 150%;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        color: white;
+    }
+      po{
+        position: absolute;
+        top:3%;
+        left:42%;
+        font-size: 150%;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+          color:white;
+        
+    }
+    you{
+        position: absolute;
+        top:35%;
+        left:29%;
+        font-size: 200%;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        color:white;
+        
+    }
+    #again{
+        visibility: hidden;
+        position: absolute;
+        left: 29%;
+        top:50%;
+        width:15%;
+        height: 12%;
+        background-color: white;
+        border: solid 1px white;
+        border-radius: 8px;
+        color:hsl(214, 47%, 23%);
+        padding: center;
+    }
+</style>
+<body>
+<div>
+<img src="logo.svg" id="logo" />
+<points>
+<a id="score">S C O R E</a>
+<b id="yourpoints">0</b>
+</points>
+</div>
+<button id="k" onclick="e();">
+<img src="icon-paper.svg"  id="paper"/>    
+    </button>
+<o></o>
+<button id="m" onclick="so();">
+<img src="icon-scissors.svg" id="sci" />
+    </button>
+<mm></mm>
+<button id="y" onclick="q();">
+<img src="icon-rock.svg" id="rock">    
+    </button>
+<yy></yy>
+<img src="bg-triangle.svg" id="photo" />
+<button id="rules" onclick="f();">
+<r id="rules2">RULES</r>
+</button>
+<fo id="bk">
+<img src="image-rules.svg" id="oo" />
+<input type="image" src=" icon-close.svg"  id="ss" onclick="g();" />
+</fo>
+<as id="li">
+<ww id="ros"></ww>
+<wa id="rock2">
+    <img src="icon-rock.svg" id="rocks">  
+    </wa>
+<oa id="oa1"></oa>
+<ob id="oa2">
+<img src='icon-paper.svg' id="opaper"/>    
+</ob>
+<ua id="ua1">
+</ua>
+<ub id="ub1">
+<img src="icon-scissors.svg" id="usci" />    
+</ub>    
+<aa id="aa1"></aa>
+<ww id="ros2"></ww>
+<wa id="rock3">
+    <img src="icon-rock.svg" id="de">  
+
+    </wa>
+    
+    
+    <oa id="papero"></oa>
+<ob id="paperw">
+<img src='icon-paper.svg' id="paperq"/>    
+</ob>
+  
+    <ua id="scia">
+</ua>
+<ub id="scio">
+<img src="icon-scissors.svg" id="sciq" />    
+</ub>    
+<go id="goo">YOU PICKED</go>
+<po id=poo>THE HOUSE PICKED</po>
+<you id="you" ></you>
+<button id="again" onmouseover="change();" onmouseout="jo();" onclick="reboot();" >PLAY AGAIN</button>
+</as>
+
+<script>
+var s=0;
+function points(){
+    s=s+1;
+     
+
+    window.yourpoints.innerHTML = s;
+}
+function f(){
+    document.getElementById("bk").style.visibility = 'visible';
+
+document.getElementById("ss").style.visibility = 'visible';
+}  
+function g(){
+    document.getElementById("bk").style.visibility = 'hidden';
+    document.getElementById("ss").style.visibility = 'hidden';
+
+}
+function so()
+    {var x= Math.floor((Math.random()*10)+1);
+     document.getElementById("aa1").style.visibility= 'visible';
+        document.getElementById("li").style.visibility= 'visible';
+        document.getElementById("ua1").style.visibility= 'visible';
+        document.getElementById("ub1").style.visibility= 'visible';
+        document.getElementById("usci").style.visibility= 'visible';
+ 
+            if(x%3==1)
+        {setTimeout(p,1000);
+                setTimeout(ppm,1800);
+             setTimeout(win,1800);
+            setTimeout(points,1800);
+        setTimeout(points,1800);
+        }    
+        else if(x%3==0){
+    setTimeout(r,1000);
+         setTimeout(rrm,1800);
+             setTimeout(lose,1800);
+
+
+}
+ 
+        else {setTimeout(sc,1000);
+                     setTimeout(ssm,1800);
+                      setTimeout(vss,1800);
+
+}
+
+        setTimeout(sm,1800);
+        setTimeout(fe,1800);
+        
+
+    }
+    function q()
+    {
+        var x= Math.floor((Math.random()*10)+1);
+
+            document.getElementById("aa1").style.visibility= 'visible';
+ 
+        document.getElementById("li").style.visibility= 'visible';
+        document.getElementById("ros").style.visibility= 'visible';
+        document.getElementById("rock2").style.visibility= 'visible';
+        document.getElementById("rocks").style.visibility= 'visible';
+if(x%3==0){
+    setTimeout(r,1000);
+    setTimeout(rrm,1800);
+    setTimeout(vss,1800);
+
+}
+        else if(x%3==1)
+        {setTimeout(p,1000);
+        setTimeout(ppm,1800);
+        setTimeout(lose,1800);
+
+}
+        else {setTimeout(sc,1000);
+              setTimeout(ssm,1800);
+             setTimeout(win,1800);
+             setTimeout(points,1800);
+
+}
+        setTimeout(rm,1800);
+                setTimeout(fe,1800);
+
+
+
+    }
+    function e()
+    {
+       var x= Math.floor((Math.random()*10)+1);
+        document.getElementById("li").style.visibility= 'visible';
+        document.getElementById("oa1").style.visibility= 'visible';
+        document.getElementById("oa2").style.visibility= 'visible';
+        document.getElementById("opaper").style.visibility= 'visible';
+     document.getElementById("aa1").style.visibility= 'visible';
+
+if(x%3==0){
+    setTimeout(r,1000);
+    setTimeout(rrm,1800);
+    setTimeout(win,1800);
+    setTimeout(points,1800);
+
+
+}
+        else if(x%3==1)
+        {setTimeout(p,1000);
+        setTimeout(ppm,1800);
+         setTimeout(vss,1800);
+
+}
+        else {setTimeout(sc,1000);
+            setTimeout(ssm,1800);
+             setTimeout(lose,1800);
+
+             }
+
+        setTimeout(pm,1800);
+        setTimeout(fe,1800);
+
+    }
+   
+    function r(){
+        document.getElementById("ros2").style.visibility= 'visible';
+        document.getElementById("rock3").style.visibility= 'visible';
+        document.getElementById("de").style.visibility= 'visible';
+       
+
+     
+    }
+       function p(){
+        document.getElementById("papero").style.visibility= 'visible';
+        document.getElementById("paperw").style.visibility= 'visible';
+        document.getElementById("paperq").style.visibility= 'visible';
+     
+    }
+       function sc(){
+        document.getElementById("scia").style.visibility= 'visible';
+        document.getElementById("scio").style.visibility= 'visible';
+        document.getElementById("sciq").style.visibility= 'visible';
+     
+    }
+    
+    function fe(){
+        document.getElementById("goo").style.left = "0%";
+        document.getElementById("poo").style.left = '57%';
+    }
+function rm(){
+    
+      document.getElementById("ros").style.left = '-5%';
+        document.getElementById("rock2").style.left = '-2.5%';
+        
+}
+function pm()
+    {
+             document.getElementById("oa1").style.left = '-5%';
+        document.getElementById("oa2").style.left = '-2.5%';
+    }
+    function sm()
+    {
+             document.getElementById("ua1").style.left = '-5%';
+        document.getElementById("ub1").style.left = '-2.5%';
+    }
+    
+    function rrm(){
+    document.getElementById("aa1").style.left = '60.5%';
+      document.getElementById("ros2").style.left = '58%';
+        document.getElementById("rock3").style.left = '60.5%';
+        document.getElementById("aa1").style.visibility= 'hidden';
+
+}
+function ppm()
+    {    document.getElementById("aa1").style.left = '60.5%';
+
+             document.getElementById("papero").style.left = '58%';
+        document.getElementById("paperw").style.left = '60.5%';
+        document.getElementById("aa1").style.visibility= 'hidden';
+
+    }
+    function ssm()
+    {    document.getElementById("aa1").style.left = '60.5%';
+             document.getElementById("scia").style.left = '58%';
+        document.getElementById("scio").style.left = '60.5%';
+        document.getElementById("aa1").style.visibility= 'hidden';
+
+    }
+function win(){
+            document.getElementById("you").style.visibility = 'visible';
+    window.you.innerHTML = 'YOU WIN';
+    document.getElementById("again").style.visibility = 'visible';
+    document.getElementById("again").style.width = '13%';
+
+}
+    function lose(){
+                    document.getElementById("you").style.visibility = 'visible';
+        window.you.innerHTML = "YOU LOSE";
+        document.getElementById("again").style.visibility = 'visible';
+
+    }
+    function vss(){
+        document.getElementById("again").style.visibility = 'visible';
+    }
+    function change(){
+    document.getElementById("again").style.color = 'hsl(349, 71%, 52%)';
+
+    }
+    function jo(){
+    document.getElementById("again").style.color = ' hsl(214, 47%, 23%)';
+   }
+    function reboot(){
+     document.getElementById("li").style.visibility = 'hidden';
+    document.getElementById("again").style.visibility = 'hidden';
+
+        document.getElementById("ua1").style.visibility= 'hidden';
+        document.getElementById("ub1").style.visibility= 'hidden';
+        document.getElementById("usci").style.visibility= 'hidden';
+    
+    
+           document.getElementById("ros").style.visibility= 'hidden';
+        document.getElementById("rock2").style.visibility= 'hidden';
+        document.getElementById("rocks").style.visibility= 'hidden';
+        
+          document.getElementById("oa1").style.visibility= 'hidden';
+        document.getElementById("oa2").style.visibility= 'hidden';
+        document.getElementById("opaper").style.visibility= 'hidden';
+        
+        
+        
+          document.getElementById("ros2").style.visibility= 'hidden';
+        document.getElementById("rock3").style.visibility= 'hidden';
+        document.getElementById("de").style.visibility= 'hidden';
+     
+    
+       
+        document.getElementById("papero").style.visibility= 'hidden';
+        document.getElementById("paperw").style.visibility= 'hidden';
+        document.getElementById("paperq").style.visibility= 'hidden';
+     
+    
+        document.getElementById("scia").style.visibility= 'hidden';
+        document.getElementById("scio").style.visibility= 'hidden';
+        document.getElementById("sciq").style.visibility= 'hidden';
+        document.getElementById("you").style.visibility = 'hidden';
+
+    }
+</script>
+
+</body>
+</head>
+</html>
